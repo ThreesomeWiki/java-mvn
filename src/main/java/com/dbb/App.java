@@ -15,9 +15,6 @@ public class App
 {
     public static void main( String[] args )
     {
-        requestBaidu();
-    }
-    public static void requestBaidu(){
         new Thread(new Runnable(){
             @Override
             public void run(){
@@ -30,8 +27,7 @@ public class App
                         }
                         @Override
                         public void onResponse(@NotNull Call call, @NotNull Response response) throws IOException {
-                            String content = response.body().string();
-                            System.out.println(content);
+                            System.out.println(response.body().string());
                         }
                     });
                 } catch (Exception e) {
